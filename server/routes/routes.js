@@ -2,7 +2,7 @@ require('dotenv').config();
 const axios = require('axios');
 
 const cities = require('./city.list.json');
-let redis =require('redis');
+const redis =require('redis');
 
 const redisPort = process.env.REDIS_URL || 6379;
 
