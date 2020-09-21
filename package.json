@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp -R dist server/dist; rm -R dist",
-    "start-dev": "nodemon server/server.js",
     "start": "node server/server.js"
   },
   "dependencies": {

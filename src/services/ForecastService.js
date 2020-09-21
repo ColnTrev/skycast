@@ -1,8 +1,13 @@
 import axios from 'axios'
 export default {
     async getForecast(query){
-        let reqString = '/' + query;
-        let res = await axios.get(reqString).then((response)=>{
+        let requestString;
+        if(process.env.NODE_ENV === 'production'){
+            requestString = 'http://collin-skycast-app.herokuapp.com/api/' + query;
+        } else {
+            requestString = 'http://localhost:5000/api/'+ query;
+        }
+        let res = await axios.get(requestString).then((response)=>{
                 return response.data;
             }).catch((error) => {
                 return {

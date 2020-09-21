@@ -5,7 +5,7 @@ const slowDown = require('express-slow-down');
 const rateLimit = require('express-rate-limit');
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -22,12 +22,12 @@ const speedLimiter = slowDown({
     delayMs: 500
 })
 
-app.use('/:query', limiter, speedLimiter, routes.checkCache, routes.getWeather);
+app.use('/api/:query', limiter, speedLimiter, routes.checkCache, routes.getWeather);
 
-//if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'production'){
     app.use(express.static(__dirname + '/dist/'));
 
     app.get(/.*/, (req, res) => res.sendFile(__dirname + '/dist/index.html'));
-//}
+}
 
 app.listen(PORT);
