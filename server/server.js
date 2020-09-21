@@ -3,13 +3,14 @@ const cors = require('cors');
 const routes = require('./routes/routes.js');
 const slowDown = require('express-slow-down');
 const rateLimit = require('express-rate-limit');
+const proxy = require('http-proxy-middleware');
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
-app.enable('trust proxy');
+//app.enable('trust proxy');
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
