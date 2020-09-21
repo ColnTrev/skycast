@@ -22,9 +22,7 @@ const speedLimiter = slowDown({
     delayMs: 500
 })
 
-app.get('/', (req,res) => res.send("Hello!"));
-
-app.get('/:query', limiter, speedLimiter, routes.checkCache, routes.getWeather);
+app.use('/:query', limiter, speedLimiter, routes.checkCache, routes.getWeather);
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(__dirname + '/dist/'));
