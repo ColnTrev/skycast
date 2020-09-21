@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp -R dist server/dist; rm -R dist",
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
