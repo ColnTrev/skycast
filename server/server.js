@@ -9,8 +9,6 @@ const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 
-app.set("port", PORT);
-
 app.enable('trust proxy');
 
 const limiter = rateLimit({
