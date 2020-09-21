@@ -22,6 +22,9 @@ const speedLimiter = slowDown({
     delayMs: 500
 })
 
+app.get('/', (req, res)=>{
+    console.log('hello!');
+});
 app.use('/api/:query', limiter, speedLimiter, routes.checkCache, routes.getWeather);
 
 if(process.env.NODE_ENV === 'production'){
