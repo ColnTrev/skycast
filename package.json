@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -R dist server; rm -R dist",
+    "build": "vite build && cp -R dist server/dist; rm -R dist",
     "start": "nodemon server/server.js"
   },
   "dependencies": {
