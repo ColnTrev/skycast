@@ -5,9 +5,11 @@ const slowDown = require('express-slow-down');
 const rateLimit = require('express-rate-limit');
 const app = express();
 
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(cors());
+
+app.set("port", PORT);
 
 app.enable('trust proxy');
 
@@ -30,4 +32,4 @@ if(process.env.NODE_ENV === 'production'){
     app.get(/.*/, (req, res) => res.sendFile(__dirname + '/dist/index.html'));
 }
 
-app.listen(port)
+app.listen(PORT);
