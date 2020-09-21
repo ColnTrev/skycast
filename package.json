@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -R dist server/dist; rm -R dist",
+    "build": "vite build",
     "start": "node server.js"
   },
   "dependencies": {
@@ -11,13 +11,6 @@
     "vue": "^3.0.0-rc.1"
   },
   "devDependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-rate-limit": "^5.1.3",
-    "express-slow-down": "^1.3.1",
-    "http-proxy-middleware": "^1.0.5",
-    "redis": "^3.0.2",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "vite": "^1.0.0-rc.1"
   },
